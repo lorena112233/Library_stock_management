@@ -1,0 +1,32 @@
+<h1>TODAS LAS PUBLICACIONES</h1>
+<div class="table-responsive-sm">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>titulo</th>
+                <th>autor</th>
+                <th>fecha</th>
+                <th>categoria</th>
+                <th>texto</th>
+                <th>Activo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let publicacion of arrayPublicaciones">
+                <td>{{publicacion._id}}</td>
+                <td>{{publicacion.titulo}}</td>
+                <td>{{publicacion.autor}}</td>
+                <td>{{publicacion.fecha}}</td>
+                <td>{{publicacion.categoria}}</td>
+                <td>{{publicacion.texto}}</td>
+                <td>{{publicacion.activo}}</td>
+                <td><button class="btn btn-small btn-danger" (click)="eliminarPublicacion(publicacion)">Delete</button></td>
+                <td><button class="btn btn-small btn-info" [routerLink]="['/edit', publicacion._id]">Editar</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-small btn-danger" (click)="crearPublicacion()">Crear nueva</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
